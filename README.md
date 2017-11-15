@@ -8,5 +8,4 @@ xunlei地址转换_html+js
         
         AAhttp://abc.com/test.zipZZ   (base64)==> QUFodHRwOi8vYWJjLmNvbS90ZXN0LnppcFpa
         
-        thunder://QUFodHRwOi8vYWJjLmNvbS90ZXN0LnppcFpa
-        
+        thunder://QUFodHRwOi8vYWJjLmNvbS90ZXN0LnppcFpa
