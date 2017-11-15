@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src=""></script>
+    <script>
+        function Xunlei_Decrypt(arg)
+        {
+            var arg_len=arg.length;
+            if (arg_len != 0){
+                if (arg.substring(0,10).toLocaleLowerCase() == 'thunder://')
+                {
+                    var tmp0 = arg.substring(10,arg_len);
+                    var tmp1=window.atob(tmp0);
+                    var tmp1_len=tmp1.length;
+                    var tmp2=tmp1.substring(2,tmp1_len-2);
+                    return tmp2;
+                }
+            }
+        }
+        function Xunlei_Encryption(arg)
+        {
+            var arg_len=arg.length;
+            if (arg_len != 0)
+            {
+                var base64 ="thunder://" + window.btoa("AA"+arg+"ZZ");
+                return base64;
+            }
+        }
+        $(document).ready(function(){
+            $("#Decrypt").click(function(){
+                var tmp = $("#Link").val();
+                $("#Link").val(Xunlei_Decrypt(tmp));
+            });
+
+            $("#Encryption").click(function(){
+                var tmp = $("#Link").val();
+                $("#Link").val(Xunlei_Encryption(tmp));
+
+            });
+        });
+    </script>
+</head>
+<body>
+<p><input id="Link" type="text" value=""></p>
+<button id="Decrypt">Decrypt</button>
+<button id="Encryption">Encryption</button>
+</body>
+</html>
